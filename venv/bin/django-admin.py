@@ -1,4 +1,4 @@
-#!/home/varenik/AllProjects/DjangoProjects/Django_rest_api/venv/bin/python
+#!/home/GAMELOFT/valera.pelenskyi/DjangoProjects/Django_rest_api/venv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
