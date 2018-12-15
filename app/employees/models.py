@@ -9,8 +9,8 @@ class Position(models.Model):
 
     class Meta:
         #set the name of table into admin panel
-        verbose_name = "Локація"
-        verbose_name_plural = "Локації"
+        verbose_name = "Positions"
+        verbose_name_plural = "Position"
         ordering = ["position"]
 
     def __str__(self):
@@ -27,7 +27,7 @@ class Position(models.Model):
 
 class Employee(models.Model):
     name = models.CharField('Name', max_length=80, unique=True)
-    position_id = models.ForeignKey(Position, default='', on_delete=models.SET_DEFAULT, related_name='position_id')
+    position_id = models.ForeignKey(Position, default='', on_delete=models.SET_DEFAULT, null=True , related_name='posit')
     first_work_day =  models.DateField(blank=False)
     last_work_dat =  models.DateField(blank=True, null=True)
 

@@ -1,16 +1,24 @@
 from rest_framework import serializers
 from employees.models import *
 
+#https://www.pythonblog.tk/post/drf-filtering-sorting-related-objects
 
 class PositionSerializers(serializers.HyperlinkedModelSerializer):
+   # id = serializers.IntegerField(read_only=True)
+    position=serializers.StringRelatedField()
     class Meta:
         model = Position
-        filds = ('position')
+        fields = ("id", "position")
+
 
 
 class EmployeeSerializers(serializers.HyperlinkedModelSerializer):
-    position = serializers.HyperlinkedRelatedField(view_name='position', many=False, read_only=True)
+    position_id = serializers.StringRelatedField(many=False)
+
+    # position_id = PositionSerializers( many=False , read_only=True)
+   # print(position2)
     class Meta:
         model = Employee
-        fields = ('name', 'first_work_day', 'position', 'last_work_dat')
-
+        fields = (
+            'name', 'first_work_day', 'position_id',  'last_work_dat'
+        )
