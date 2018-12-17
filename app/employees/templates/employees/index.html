@@ -18,18 +18,20 @@
         <table id="employee" class="display table table-striped table-bordered" style="width:100%" data-server-side="true" data-ajax="/api/employee/?format=datatables">
           <tfoot> <tr>
             <th >name</th>
-
+            <th >email</th>
             <th>position</th>
             <th >first_day</th>
             <th >last_day</th>
+            <th >description</th>
           </tr> </tfoot>
           <thead>
             <tr>
               <th data-data="name">name</th>
-
-              <th data-data="position_id" data-name="position_id.position" >position</th>
+              <th data-data="email">email</th>
+              <th data-data="position_id">position</th>
               <th data-data="first_work_day">first_day</th>
               <th data-data="last_work_dat">last_day</th>
+              <th data-data="description">description</th>
             </tr>
           </thead>
 

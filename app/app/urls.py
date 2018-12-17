@@ -20,9 +20,11 @@ from django.urls import path
 from employees import views
 from .router import router
 from django.urls import include
+#from rest_framework.authtoken import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    url('', views.index, name='employee')
+    url('', views.index, name='employee'),
+    #path('api-token-auth/', views.obtain_auth_token, name='api-token-auth')
 ]

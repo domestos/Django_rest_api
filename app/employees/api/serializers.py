@@ -14,11 +14,8 @@ class PositionSerializers(serializers.HyperlinkedModelSerializer):
 
 class EmployeeSerializers(serializers.HyperlinkedModelSerializer):
     position_id = serializers.StringRelatedField(many=False)
-
-    # position_id = PositionSerializers( many=False , read_only=True)
-   # print(position2)
     class Meta:
         model = Employee
         fields = (
-            'name', 'first_work_day', 'position_id',  'last_work_dat'
+            'name', 'email', 'first_work_day', 'position_id',  'last_work_dat', 'description'
         )

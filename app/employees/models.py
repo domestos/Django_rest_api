@@ -27,12 +27,17 @@ class Position(models.Model):
 
 class Employee(models.Model):
     name = models.CharField('Name', max_length=80, unique=True)
+    email = models.EmailField(max_length=70,blank=True)
     position_id = models.ForeignKey(Position, default='', on_delete=models.SET_DEFAULT, null=True , related_name='posit')
     first_work_day =  models.DateField(blank=False)
     last_work_dat =  models.DateField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
 
     class Meta:
         ordering = ["first_work_day"]
+        verbose_name = "Employees"
+        verbose_name_plural = "Employee"
 
     def __str__(self):
+       # return "%s %s %s" % (self.id ,self.name, self.position_id)
         return self.name

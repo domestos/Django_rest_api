@@ -16,9 +16,9 @@ class EmployeesViewSets(viewsets.ModelViewSet):
     # ordering_fields = (
     #      'name',
     #  )
-    search_fields = (
-         'name',
-     )
+    #search_fields = (
+    #     'name',
+     #)
 
 class PositionViewSets(viewsets.ModelViewSet):
      queryset = Position.objects.all()
