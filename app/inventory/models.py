@@ -27,8 +27,9 @@ class Location(models.Model):
 
 
 class Item(models.Model):
-    item =  models.CharField('item', max_length=80)
+    item =  models.CharField('item', max_length=255)
     number = models.CharField('number', max_length=80)
+    hw = models.CharField('number', max_length=255)
     type = models.ForeignKey(Type, default='', on_delete=models.SET_DEFAULT, null=True )
     owner = models.ForeignKey(Employee, default='', on_delete=models.SET_DEFAULT, null=True )
     location = models.ForeignKey(Location, default='', on_delete=models.SET_DEFAULT, null=True )
