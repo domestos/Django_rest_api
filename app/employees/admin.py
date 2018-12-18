@@ -12,7 +12,7 @@ class PositionAdmin(admin.ModelAdmin):
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     name = ('__str__', 'name', 'email', 'position')
-    search_fields = ('name', 'first_work_day', 'position')
+    search_fields = ('name', 'email', 'position')
     # DISPLAYS MODEL'S COLUMNS IN ADMIN PAGE      ======
     # ****** Shows selected columns ******
     # list_display = ['name', 'email', 'first_work_day', 'position_id']

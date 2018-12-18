@@ -35,7 +35,7 @@ def print_qr_code(modeladmin, request, queryset):
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     location = ('__str__', 'location')
-
+    search_fields = ['location']
 
 @admin.register(Type)
 class TypeAdmin(admin.ModelAdmin):
@@ -44,8 +44,10 @@ class TypeAdmin(admin.ModelAdmin):
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-
+    list_display = [field.name for field in Item._meta.fields]
+    change_list_template = 'admin/inventory/inventory_change_list_admin.html'
+    search_fields = ['item', 'owner', 'location']
+    autocomplete_fields = ['owner', 'location']
     item = ('__str__', 'item')
-    list_display= [field.name for field in Item._meta.fields]
-    list_filter = ['type', 'location']
+    list_filter = ['type', 'owner', 'location']
     actions = [generate_qr_code , print_qr_code]
