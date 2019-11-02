@@ -1,4 +1,4 @@
-Django==2.1.4
+Django==2.1.11
 djangorestframework==3.9.0
 djangorestframework-datatables==0.4.1
 pkg-resources==0.0.0
